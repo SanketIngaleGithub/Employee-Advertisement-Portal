@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_Advertisement_PortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdvertInterestMapper_tbl">
+    <Key>
+      <PropertyRef Name="InterestID" />
+    </Key>
+    <Property Name="InterestID" Type="Int32" Nullable="false" />
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="AdvId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK__AdvertInt__AdvId__01142BA1" FromRole="AdvertInterestMapper_tbl" ToRole="AdvertisementDetails_tbl" />
+    <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK__AdvertInt__EmpId__02084FDA" FromRole="AdvertInterestMapper_tbl" ToRole="EmployeeDetails_tbl" />
+  </EntityType>
+  <EntityType Name="AdvertisementCategory_tbl">
+    <Key>
+      <PropertyRef Name="AdvCategoryId" />
+    </Key>
+    <Property Name="AdvCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" FromRole="AdvertisementCategory_tbl" ToRole="AdvertisementDetails_tbl" />
+  </EntityType>
+  <EntityType Name="AdvertisementDetails_tbl">
+    <Key>
+      <PropertyRef Name="AdvId" />
+    </Key>
+    <Property Name="AdvId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdvCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsRejected" Type="Boolean" Nullable="false" />
+    <Property Name="MediaPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AdvertInterestMapper_tbl" Relationship="Self.FK__AdvertInt__AdvId__01142BA1" FromRole="AdvertisementDetails_tbl" ToRole="AdvertInterestMapper_tbl" />
+    <NavigationProperty Name="AdvertisementCategory_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" FromRole="AdvertisementDetails_tbl" ToRole="AdvertisementCategory_tbl" />
+    <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" FromRole="AdvertisementDetails_tbl" ToRole="EmployeeDetails_tbl" />
+  </EntityType>
+  <EntityType Name="EmployeeDetails_tbl">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AdvertInterestMapper_tbl" Relationship="Self.FK__AdvertInt__EmpId__02084FDA" FromRole="EmployeeDetails_tbl" ToRole="AdvertInterestMapper_tbl" />
+    <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" FromRole="EmployeeDetails_tbl" ToRole="AdvertisementDetails_tbl" />
+    <NavigationProperty Name="UserRole_tbl" Relationship="Self.FK_EmployeeDetails_tbl_UserRole_tbl" FromRole="EmployeeDetails_tbl" ToRole="UserRole_tbl" />
+  </EntityType>
+  <EntityType Name="UserRole_tbl">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK_EmployeeDetails_tbl_UserRole_tbl" FromRole="UserRole_tbl" ToRole="EmployeeDetails_tbl" />
+  </EntityType>
+  <Association Name="FK__AdvertInt__AdvId__01142BA1">
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="AdvId" />
+      </Principal>
+      <Dependent Role="AdvertInterestMapper_tbl">
+        <PropertyRef Name="AdvId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AdvertInt__EmpId__02084FDA">
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="AdvertInterestMapper_tbl">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+    <End Role="AdvertisementCategory_tbl" Type="Self.AdvertisementCategory_tbl" Multiplicity="1" />
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvertisementCategory_tbl">
+        <PropertyRef Name="AdvCategoryId" />
+      </Principal>
+      <Dependent Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="AdvCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDetails_tbl_UserRole_tbl">
+    <End Role="UserRole_tbl" Type="Self.UserRole_tbl" Multiplicity="1" />
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole_tbl">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="EmployeeDetails_tbl">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employee_Advertisement_PortalEntity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdvertInterestMapper_tbl" EntityType="Self.AdvertInterestMapper_tbl" />
+    <EntitySet Name="AdvertisementCategory_tbl" EntityType="Self.AdvertisementCategory_tbl" />
+    <EntitySet Name="AdvertisementDetails_tbl" EntityType="Self.AdvertisementDetails_tbl" />
+    <EntitySet Name="EmployeeDetails_tbl" EntityType="Self.EmployeeDetails_tbl" />
+    <EntitySet Name="UserRole_tbl" EntityType="Self.UserRole_tbl" />
+    <AssociationSet Name="FK__AdvertInt__AdvId__01142BA1" Association="Self.FK__AdvertInt__AdvId__01142BA1">
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+      <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AdvertInt__EmpId__02084FDA" Association="Self.FK__AdvertInt__EmpId__02084FDA">
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+      <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" Association="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+      <End Role="AdvertisementCategory_tbl" EntitySet="AdvertisementCategory_tbl" />
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" Association="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDetails_tbl_UserRole_tbl" Association="Self.FK_EmployeeDetails_tbl_UserRole_tbl">
+      <End Role="UserRole_tbl" EntitySet="UserRole_tbl" />
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+    </AssociationSet>
+    <FunctionImport Name="SP_EmployeeDetail">
+      <Parameter Name="EmpId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateAdvDetail">
+      <Parameter Name="AdvId" Mode="In" Type="Int32" />
+      <Parameter Name="EmpId" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Int32" />
+      <Parameter Name="PostedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Location" Mode="In" Type="String" />
+      <Parameter Name="AdvCategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="IsApproved" Mode="In" Type="Boolean" />
+      <Parameter Name="IsRejected" Mode="In" Type="Boolean" />
+      <Parameter Name="MediaPath" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

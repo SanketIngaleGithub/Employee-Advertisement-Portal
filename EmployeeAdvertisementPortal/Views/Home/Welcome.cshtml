@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    string EmailId = Session["Email"] as string;
+
+    ViewBag.Logout = Html.ActionLink("Logout", "UserLogin", "Login", new { area = "" }, new { @class = "nav-link" });
+}
+
+
+<h2>Welcome to Employee Advertisement Portal</h2>

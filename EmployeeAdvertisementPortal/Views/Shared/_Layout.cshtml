@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EAP </title>
+
+    <link rel="icon" href="~/Content/Images/eapfavicon.png" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.6/css/dataTables.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/scroller/2.4.0/js/scroller.jqueryui.js"></script>
+    <script src="https://cdn.datatables.net/scroller/2.4.0/js/dataTables.scroller.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.jqueryui.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></script>
+
+</head>
+<style>
+    .dropbtn {
+        background-color: black;
+        padding: 16px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 200px;
+        z-index: 1;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        border-radius: 5px;
+    }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .dropdown-content a:hover {
+                background-color: #808080;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .navbar .email {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .nav-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .email span {
+        color: white;
+    }
+    #logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #FFDB58;
+        transition: transform 0.3s ease-in-out;
+    }
+
+   
+    #logoLink {
+        color: #FFDB58;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+       
+        #logoLink:hover {
+            color: #FFA500;
+        }
+
+            #logoLink:hover #logo {
+                transform: scale(1.1);
+            }
+</style>
+<body>
+    @{
+        string EmailId = Session["Email"] as string;
+
+    }
+   
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style=" background-color:black" id="mainNav">
+        <div class="container">
+            <h3 style="color: #FFDB58; ">
+            <a href="@Url.Action("Index", "Home")" style="color: #FFDB58;"id="logoLink">
+            <img src="~/Content/Images/eaplogo.jpg " alt="Logo" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #FFDB58;",alt="Logo" id="logo"> EAP</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item"><a class="nav-link" href="#about" style="color: #FFDB58">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services" style="color: #FFDB58">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team" style="color: #FFDB58">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("UserLogin", "Login")" style="color: #FFDB58">Login</a></li>
+                    }
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                        <div class="dropdown">
+                            <button class="dropbtn" style="color: #FFDB58"> Employee </button>
+                            <div class="dropdown-content">
+                                <a href="@Url.Action("ApprovedAdvertisementList", "Advertisement")" style="color: #FFDB58"> Advertisement </a>
+                                <a href="@Url.Action("AdvertisementList", "Advertisement")" style="color: #FFDB58">My &nbsp; Advertise </a>
+                            </div>
+                        </div>
+
+                        if (User.IsInRole("Admin"))
+                        {
+                            <div class="dropdown">
+
+                                <button class="dropbtn" style="color: #FFDB58"> Admin&nbsp; </button>
+                                <div class="dropdown-content">
+                                    <a href="@Url.Action("Index", "Employee")" style="color: #FFDB58"> Employee &nbsp; List </a>
+                                    <a href="@Url.Action("CreateEmployee", "Employee")" style="color: #FFDB58"> Create &nbsp; Employee </a>
+                                    <a href="@Url.Action("ApprovalList", "Admin")" style="color: #FFDB58">Approval &nbsp;List</a>
+
+                                </div>
+                            </div>
+
+                        }
+
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("CreateAdvertisement", "Advertisement")" style="color: #FFDB58; display: flex; align-items: center;"> <i class="fa fa-plus-square" aria-hidden="true" style=" font-size: 30px"> </i> &nbsp; &nbsp;  </a></li>
+
+
+
+                        <div class="email">
+
+                            <span style="color: #FFDB58">Hi @EmailId !</span>
+                        </div>
+
+                        <div class="dropdown">
+
+                            <button class="dropbtn"><i class="fa fa-user-tie" aria-hidden="true" style=" color: #FFDB58; font-size: 30px ; align-items :flex-end;"> </i></button>
+                            <div class="dropdown-content">
+                                <a href="@Url.Action("EmployeeDetails", "Employee")" style="color: #FFDB58">My Profile </a>
+                                <a href="@Url.Action("Logout", "Login")" style="color: #FFDB58">Logout</a>
+                            </div>
+                        </div>
+
+                    }
+</div>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        function openNav() {
+            var sidebarWidth = 250;
+            document.getElementById("mySidenav").style.width = sidebarWidth + "px";
+            document.body.style.marginLeft = sidebarWidth + "px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.body.style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>

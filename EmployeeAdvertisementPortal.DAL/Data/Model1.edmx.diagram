@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b891377880674509894b49b480922371" Name="Diagram1">
+        <EntityTypeShape EntityType="Employee_Advertisement_PortalModel.AdvertInterestMapper_tbl" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Advertisement_PortalModel.AdvertisementCategory_tbl" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Advertisement_PortalModel.AdvertisementDetails_tbl" Width="1.5" PointX="8.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Advertisement_PortalModel.EmployeeDetails_tbl" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Employee_Advertisement_PortalModel.UserRole_tbl" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="Employee_Advertisement_PortalModel.FK__AdvertInt__AdvId__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Advertisement_PortalModel.FK__AdvertInt__EmpId__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Advertisement_PortalModel.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Advertisement_PortalModel.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="Employee_Advertisement_PortalModel.FK_EmployeeDetails_tbl_UserRole_tbl" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

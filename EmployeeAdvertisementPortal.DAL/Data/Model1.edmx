@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Employee_Advertisement_PortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdvertInterestMapper_tbl">
+          <Key>
+            <PropertyRef Name="InterestID" />
+          </Key>
+          <Property Name="InterestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="AdvId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdvertisementCategory_tbl">
+          <Key>
+            <PropertyRef Name="AdvCategoryId" />
+          </Key>
+          <Property Name="AdvCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdvertisementDetails_tbl">
+          <Key>
+            <PropertyRef Name="AdvId" />
+          </Key>
+          <Property Name="AdvId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="PostedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdvCategoryId" Type="int" Nullable="false" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsRejected" Type="bit" Nullable="false" />
+          <Property Name="MediaPath" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails_tbl">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="UserRole_tbl">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__AdvertInt__AdvId__01142BA1">
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="AdvId" />
+            </Principal>
+            <Dependent Role="AdvertInterestMapper_tbl">
+              <PropertyRef Name="AdvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AdvertInt__EmpId__02084FDA">
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="AdvertInterestMapper_tbl">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+          <End Role="AdvertisementCategory_tbl" Type="Self.AdvertisementCategory_tbl" Multiplicity="1" />
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdvertisementCategory_tbl">
+              <PropertyRef Name="AdvCategoryId" />
+            </Principal>
+            <Dependent Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="AdvCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_tbl_UserRole_tbl">
+          <End Role="UserRole_tbl" Type="Self.UserRole_tbl" Multiplicity="1" />
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole_tbl">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails_tbl">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_EmployeeDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmpId" Type="int" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="DOB" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="RoleId" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="date" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateAdvDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AdvId" Type="int" Mode="In" />
+          <Parameter Name="EmpId" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="Price" Type="int" Mode="In" />
+          <Parameter Name="PostedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="date" Mode="In" />
+          <Parameter Name="Location" Type="varchar" Mode="In" />
+          <Parameter Name="AdvCategoryId" Type="int" Mode="In" />
+          <Parameter Name="IsApproved" Type="bit" Mode="In" />
+          <Parameter Name="IsRejected" Type="bit" Mode="In" />
+          <Parameter Name="MediaPath" Type="varchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="Employee_Advertisement_PortalModelStoreContainer">
+          <EntitySet Name="AdvertInterestMapper_tbl" EntityType="Self.AdvertInterestMapper_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdvertisementCategory_tbl" EntityType="Self.AdvertisementCategory_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdvertisementDetails_tbl" EntityType="Self.AdvertisementDetails_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeDetails_tbl" EntityType="Self.EmployeeDetails_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole_tbl" EntityType="Self.UserRole_tbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AdvertInt__AdvId__01142BA1" Association="Self.FK__AdvertInt__AdvId__01142BA1">
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+            <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AdvertInt__EmpId__02084FDA" Association="Self.FK__AdvertInt__EmpId__02084FDA">
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+            <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" Association="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+            <End Role="AdvertisementCategory_tbl" EntitySet="AdvertisementCategory_tbl" />
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" Association="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_tbl_UserRole_tbl" Association="Self.FK_EmployeeDetails_tbl_UserRole_tbl">
+            <End Role="UserRole_tbl" EntitySet="UserRole_tbl" />
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Employee_Advertisement_PortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdvertInterestMapper_tbl">
+          <Key>
+            <PropertyRef Name="InterestID" />
+          </Key>
+          <Property Name="InterestID" Type="Int32" Nullable="false" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="AdvId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK__AdvertInt__AdvId__01142BA1" FromRole="AdvertInterestMapper_tbl" ToRole="AdvertisementDetails_tbl" />
+          <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK__AdvertInt__EmpId__02084FDA" FromRole="AdvertInterestMapper_tbl" ToRole="EmployeeDetails_tbl" />
+        </EntityType>
+        <EntityType Name="AdvertisementCategory_tbl">
+          <Key>
+            <PropertyRef Name="AdvCategoryId" />
+          </Key>
+          <Property Name="AdvCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" FromRole="AdvertisementCategory_tbl" ToRole="AdvertisementDetails_tbl" />
+        </EntityType>
+        <EntityType Name="AdvertisementDetails_tbl">
+          <Key>
+            <PropertyRef Name="AdvId" />
+          </Key>
+          <Property Name="AdvId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AdvCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsRejected" Type="Boolean" Nullable="false" />
+          <Property Name="MediaPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AdvertInterestMapper_tbl" Relationship="Self.FK__AdvertInt__AdvId__01142BA1" FromRole="AdvertisementDetails_tbl" ToRole="AdvertInterestMapper_tbl" />
+          <NavigationProperty Name="AdvertisementCategory_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" FromRole="AdvertisementDetails_tbl" ToRole="AdvertisementCategory_tbl" />
+          <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" FromRole="AdvertisementDetails_tbl" ToRole="EmployeeDetails_tbl" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails_tbl">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdvertInterestMapper_tbl" Relationship="Self.FK__AdvertInt__EmpId__02084FDA" FromRole="EmployeeDetails_tbl" ToRole="AdvertInterestMapper_tbl" />
+          <NavigationProperty Name="AdvertisementDetails_tbl" Relationship="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" FromRole="EmployeeDetails_tbl" ToRole="AdvertisementDetails_tbl" />
+          <NavigationProperty Name="UserRole_tbl" Relationship="Self.FK_EmployeeDetails_tbl_UserRole_tbl" FromRole="EmployeeDetails_tbl" ToRole="UserRole_tbl" />
+        </EntityType>
+        <EntityType Name="UserRole_tbl">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EmployeeDetails_tbl" Relationship="Self.FK_EmployeeDetails_tbl_UserRole_tbl" FromRole="UserRole_tbl" ToRole="EmployeeDetails_tbl" />
+        </EntityType>
+        <Association Name="FK__AdvertInt__AdvId__01142BA1">
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="AdvId" />
+            </Principal>
+            <Dependent Role="AdvertInterestMapper_tbl">
+              <PropertyRef Name="AdvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AdvertInt__EmpId__02084FDA">
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="AdvertInterestMapper_tbl">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+          <End Role="AdvertisementCategory_tbl" Type="Self.AdvertisementCategory_tbl" Multiplicity="1" />
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdvertisementCategory_tbl">
+              <PropertyRef Name="AdvCategoryId" />
+            </Principal>
+            <Dependent Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="AdvCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+          <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="AdvertisementDetails_tbl">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_tbl_UserRole_tbl">
+          <End Role="UserRole_tbl" Type="Self.UserRole_tbl" Multiplicity="1" />
+          <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole_tbl">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="EmployeeDetails_tbl">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Employee_Advertisement_PortalEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdvertInterestMapper_tbl" EntityType="Self.AdvertInterestMapper_tbl" />
+          <EntitySet Name="AdvertisementCategory_tbl" EntityType="Self.AdvertisementCategory_tbl" />
+          <EntitySet Name="AdvertisementDetails_tbl" EntityType="Self.AdvertisementDetails_tbl" />
+          <EntitySet Name="EmployeeDetails_tbl" EntityType="Self.EmployeeDetails_tbl" />
+          <EntitySet Name="UserRole_tbl" EntityType="Self.UserRole_tbl" />
+          <AssociationSet Name="FK__AdvertInt__AdvId__01142BA1" Association="Self.FK__AdvertInt__AdvId__01142BA1">
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+            <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AdvertInt__EmpId__02084FDA" Association="Self.FK__AdvertInt__EmpId__02084FDA">
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+            <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" Association="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+            <End Role="AdvertisementCategory_tbl" EntitySet="AdvertisementCategory_tbl" />
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" Association="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+            <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_tbl_UserRole_tbl" Association="Self.FK_EmployeeDetails_tbl_UserRole_tbl">
+            <End Role="UserRole_tbl" EntitySet="UserRole_tbl" />
+            <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+          </AssociationSet>
+          <FunctionImport Name="SP_EmployeeDetail">
+            <Parameter Name="EmpId" Mode="In" Type="Int32" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="RoleId" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateAdvDetail">
+            <Parameter Name="AdvId" Mode="In" Type="Int32" />
+            <Parameter Name="EmpId" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Int32" />
+            <Parameter Name="PostedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Location" Mode="In" Type="String" />
+            <Parameter Name="AdvCategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="IsApproved" Mode="In" Type="Boolean" />
+            <Parameter Name="IsRejected" Mode="In" Type="Boolean" />
+            <Parameter Name="MediaPath" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Employee_Advertisement_PortalModelStoreContainer" CdmEntityContainer="Employee_Advertisement_PortalEntity">
+          <EntitySetMapping Name="AdvertInterestMapper_tbl">
+            <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertInterestMapper_tbl">
+              <MappingFragment StoreEntitySet="AdvertInterestMapper_tbl">
+                <ScalarProperty Name="InterestID" ColumnName="InterestID" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="AdvId" ColumnName="AdvId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdvertisementCategory_tbl">
+            <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertisementCategory_tbl">
+              <MappingFragment StoreEntitySet="AdvertisementCategory_tbl">
+                <ScalarProperty Name="AdvCategoryId" ColumnName="AdvCategoryId" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdvertisementDetails_tbl">
+            <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertisementDetails_tbl">
+              <MappingFragment StoreEntitySet="AdvertisementDetails_tbl">
+                <ScalarProperty Name="AdvId" ColumnName="AdvId" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="AdvCategoryId" ColumnName="AdvCategoryId" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsRejected" ColumnName="IsRejected" />
+                <ScalarProperty Name="MediaPath" ColumnName="MediaPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeDetails_tbl">
+            <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.EmployeeDetails_tbl">
+              <MappingFragment StoreEntitySet="EmployeeDetails_tbl">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole_tbl">
+            <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.UserRole_tbl">
+              <MappingFragment StoreEntitySet="UserRole_tbl">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_EmployeeDetail" FunctionName="Employee_Advertisement_PortalModel.Store.SP_EmployeeDetail" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateAdvDetail" FunctionName="Employee_Advertisement_PortalModel.Store.SP_UpdateAdvDetail" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

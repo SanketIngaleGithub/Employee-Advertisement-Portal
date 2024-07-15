@@ -1,0 +1,132 @@
+﻿
+@model IEnumerable<EmployeeAdvertisementPortal.Model.AdvertisementViewModel.AdvertisementViewModel>
+@using EmployeeAdvertisementPortal.Core.Constant;
+
+@{
+    ViewBag.Title = "My Advertisement List";
+    IEnumerable<SelectListItem> categoryList = ViewBag?.AdvCategoryId;
+}
+
+<h2>@ConstantFile.AdvertisementListMessage</h2>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<br />
+<br />
+<br />
+<table class="table table-hover table-striped table-bordered text-center" id="tblCustomer" style="width:100%">
+    <thead class="text-center" style="margin-left:40px">
+        <tr>
+            <th class="text-center">Image</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Title)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Price)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Location)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.AdvCategoryId)</th>
+            <th class="text-center">Interested People</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @if (!string.IsNullOrEmpty(item.MediaPath))
+                    {
+                        <div class="text-center">
+                            <img src="@Url.Content(item.MediaPath)" alt="Advertisement Image" style="max-width: 200px; max-height: 200px;" />
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No image available</p>
+                    }
+                </td>
+                <td class="align-middle text-center">@Html.DisplayFor(modelItem => item.Title)</td>
+                <td class="align-middle text-center">@Html.DisplayFor(modelItem => item.Price)</td>
+                <td class="align-middle text-center">@Html.DisplayFor(modelItem => item.Location)</td>
+                <td class="align-middle">
+                    @{
+                        string categoryName = categoryList.FirstOrDefault(x => x.Value == item.AdvCategoryId.ToString())?.Text ?? "Not Specified";
+                    }
+                    @categoryName
+                </td>
+
+                <td class="align-middle text-center">@Html.DisplayFor(modelItem => item.EmailCount)</td>
+
+                <td class="align-middle">
+                    <div class="action-buttons">
+                       
+                        <a href="@Url.Action("AdvertisementDetails", "Advertisement", new { id = item.AdvId })" class="details-btn action-icon" title="Details" style="text-decoration: none;">
+                            <img src="~/Content/Images/details.png" style="width: 20px; height: 20px;"  />
+                        </a>&nbsp;
+
+                        &nbsp;<i class="fas fa-edit edit-btn action-icon" data-id="@item.AdvId" title="Edit"></i> &nbsp;
+                        &nbsp; <i class="fas fa-trash delete-btn action-icon" data-id="@item.AdvId" title="Delete"></i> &nbsp;
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="interestedPeopleModal" class="modal" style="display: none;">
+    <div class="modal-content" style="border: none;">
+        <span class="close">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function () {
+        var swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: true
+        });
+
+        $('.delete-btn').on('click', function () {
+            var advId = $(this).data('id');
+
+            swalWithBootstrapButtons.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '@Url.Action("DeleteAdvertisement", new { id = "__advId" })'.replace('__advId', advId);
+
+                    swalWithBootstrapButtons.fire({
+                        title: "Deleted!",
+                        text: "Your advertisement has been deleted.",
+                        icon: "success"
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your advertisement is safe :)",
+                        icon: "error"
+                    });
+                }
+            });
+        });
+
+        $('.edit-btn').on('click', function () {
+            var advId = $(this).data('id');
+            window.location.href = '@Url.Action("UpdateAdvertisement", new { id = "__advId" })'.replace('__advId', advId);
+        });
+
+        var table = new DataTable('#tblCustomer', {
+            columnDefs: [
+                { targets: [0], orderable: false },
+                { targets: [5], orderable: false }
+            ]
+        });
+    });
+</script>

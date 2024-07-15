@@ -1,0 +1,63 @@
+﻿@model IEnumerable<string>
+<style>
+    .email-header {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+}
+
+.email-container {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.email-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.email-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-text {
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+</style>
+<h5 class="email-header" style="color:white; background-color:black;">Interested Person's Email</h5>
+
+<div class="email-container">
+    @foreach (var email in Model)
+    {
+        <ul class="email-list">
+            <li class="email-item">
+                <div class="email-text">@email</div>
+            </li>
+        </ul>
+    }
+</div>

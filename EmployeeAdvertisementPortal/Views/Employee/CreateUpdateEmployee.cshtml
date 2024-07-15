@@ -1,0 +1,130 @@
+﻿@model EmployeeAdvertisementPortal.EmployeeViewModel
+
+@{
+    ViewBag.Title = (Model.EmpId > 0) ? "Update Employee" : "Create Employee";
+    var roleId = ViewBag.RoleID;
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="~/Content/Style/CreateUpdateEmployee.css" rel="stylesheet" />
+<br />
+<br />
+<br />
+<br />
+<h2 class="text-center" style="color: black; font-weight: bold;">@ViewBag.Title</h2>
+<body >
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal container-box mx-auto">
+         
+            @Html.ValidationSummary(true, "", new { @class = "text-danger text-center" })
+
+            @if (Model.EmpId > 0)
+            {
+                @Html.HiddenFor(model => model.EmpId)
+            }
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="FirstName" class="control-label">FirstName <span class="required-field">*</span></label>
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="LastName" class="control-label">LastName <span class="required-field">*</span></label>
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email" class="control-label">Email <span class="required-field">*</span></label>
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Gender" class="control-label">Gender <span class="required-field">*</span></label>
+                        <div>
+                            <label class="radio-inline">
+                                @Html.RadioButtonFor(model => model.Gender, "Male") Male
+                            </label>
+                            <label class="radio-inline">
+                                @Html.RadioButtonFor(model => model.Gender, "Female") Female
+                            </label>
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="DOB" class="control-label">DOB <span class="required-field">*</span></label>
+                        @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                        @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address" class="control-label">Address <span class="required-field">*</span></label>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="RoleId" class="control-label">Role <span class="required-field">*</span></label>
+                        @Html.DropDownListFor(model => model.RoleId, Model.Role, "-- Select Role --", new { @class = "form-control", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                    </div>
+
+                    @if (Model.EmpId <= 0)
+                    {
+                        <div class="form-group">
+                            <label for="Password" class="control-label">Password <span class="required-field">*</span></label>
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    }
+                </div>
+            </div>
+            <br>
+            <div class="form-group text-center">
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
+
+                &nbsp;&nbsp; <input type="submit" value="Save" class="btn btn-primary mr-2" style="background-color: #FFC300 " />
+            </div>
+        </div>
+    }
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(function () {
+            var today = new Date();
+            var eighteenYearsAgo = new Date();
+            eighteenYearsAgo.setFullYear(today.getFullYear() - 18);
+
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-100:+0",
+                maxDate: eighteenYearsAgo,
+                onSelect: function (dateText) {
+                    $(this).valid();
+                }
+            });
+        });
+    </script>
+}
+
+<style>
+    .required-field {
+        color: red;
+    }
+</style>

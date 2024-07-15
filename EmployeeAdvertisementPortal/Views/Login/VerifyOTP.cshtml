@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Verify OTP";
+}
+<link href="~/Content/Style/VerifyOTP.css" rel="stylesheet" />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<body>
+    <div class="container py-3">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col col-xl-10">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="~/Content/Images/forgotpassword.jpg"
+                                 alt="Forgot password form" class="img-fluid" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body">
+                               
+
+                                @if (ViewBag.ShowOtpMessage == true)
+                                {
+                                    <div id="otpMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Check your email for OTP.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                }
+
+                               
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <div class="form-group" ,class="bold-text">
+                                            <h4>  @Html.Label("Enter OTP", htmlAttributes: new { @class = "control-label col-md-4" }) </h4>
+                                            <div class="col-md-10">
+                                                <input type="text" name="otp" class="form-control" />
+                                                @Html.ValidationMessage("OTP", "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <div class="form-group">
+
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark  btn-block" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

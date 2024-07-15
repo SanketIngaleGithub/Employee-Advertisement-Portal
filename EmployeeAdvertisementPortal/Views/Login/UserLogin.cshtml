@@ -1,0 +1,65 @@
+﻿@model EmployeeAdvertisementPortal.LoginViewModel
+
+@{
+    ViewBag.Title = "UserLogin";
+    string EmailId = Session["Email"] as string;
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<link href="~/Content/Style/Login.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#loginform").validate();
+    });
+</script>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<body>
+    <div class="container py-2">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col col-xl-10">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="~/Content/Images/eaplogo.jpg" alt="Login Form" class=" img-cover" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+
+                                @using (Html.BeginForm("UserLogin", "Login", FormMethod.Post, new { id = "loginform" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"> Login </h3>
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                    <div class="form-outline mb-4">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-lg", placeholder = "Email address" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control form-control-lg", placeholder = "Password" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <button class="btn" type="submit" style="background-color: #FFC300; margin-right: 15px;">Login</button> <a class="bold-text" href="@Url.Action("ForgotPassword", "Login")" style="font-size: larger; color: black !important;">Forgot password?</a>
+
+                                }
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

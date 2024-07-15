@@ -1,0 +1,132 @@
+﻿@model IEnumerable<EmployeeAdvertisementPortal.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    IEnumerable<SelectListItem> roleList = ViewBag?.RoleID;
+    int? loggedInUserId = Session["UserId"] as int?;
+}
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+    .action-icon {
+        cursor: pointer;
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<table class="table table-hover table-striped table-bordered" id="tblCustomer" style="width:100%">
+    <thead class="text-center">
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.LastName)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Email)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Gender)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.Address)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.RoleId)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        @foreach (EmployeeViewModel item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td>
+                    @{
+                        string roleName = roleList.Where(x => x.Value == item.RoleId.ToString()).First().Text;
+                    }
+                    @roleName
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <i class="fas fa-edit edit-btn action-icon" data-id="@item.EmpId" title="Edit"></i>&nbsp;&nbsp;
+                        &nbsp;&nbsp;<i class="fas fa-trash delete-btn action-icon" data-id="@item.EmpId" title="Delete"></i>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+    <p>
+        @Html.ActionLink("Create New", "CreateEmployee", null, new { @class = "btn btn-dark float-end" })
+    </p>
+    <br />
+    <br />
+</table>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+            var loggedInUserId = '@loggedInUserId';
+            var swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: true
+            });
+
+           $('.delete-btn').on('click', function () {
+    var empId = $(this).data('id');
+    if (empId == loggedInUserId) {
+        swalWithBootstrapButtons.fire({
+            title: "Action Denied",
+            text: "You cannot delete your own details.",
+            icon: "error",
+            confirmButtonText: "OK"
+        });
+    } else {
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            TimeRanges:5000,
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '@Url.Action("DeleteEmployee", "Employee", new { id = "__empId" })'.replace('__empId', empId);
+                swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your record is safe :)",
+                    icon: "error"
+                });
+            }
+        });
+    }
+});
+
+            $('.edit-btn').on('click', function () {
+                var empId = $(this).data('id')
+                window.location.href = '@Url.Action("UpdateEmployee", new { id = "__empId" })'.replace('__empId', empId);
+            });
+
+            var table = new DataTable('#tblCustomer', {
+                scrollX: true,
+                scrollY: 350,
+                 columnDefs: [
+                                { targets: [6], orderable: false }
+                             ]
+            });
+
+        });
+    </script>
+}

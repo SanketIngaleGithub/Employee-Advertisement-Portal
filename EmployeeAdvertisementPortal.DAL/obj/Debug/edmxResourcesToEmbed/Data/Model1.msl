@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employee_Advertisement_PortalModelStoreContainer" CdmEntityContainer="Employee_Advertisement_PortalEntity">
+    <EntitySetMapping Name="AdvertInterestMapper_tbl">
+      <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertInterestMapper_tbl">
+        <MappingFragment StoreEntitySet="AdvertInterestMapper_tbl">
+          <ScalarProperty Name="InterestID" ColumnName="InterestID" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="AdvId" ColumnName="AdvId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvertisementCategory_tbl">
+      <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertisementCategory_tbl">
+        <MappingFragment StoreEntitySet="AdvertisementCategory_tbl">
+          <ScalarProperty Name="AdvCategoryId" ColumnName="AdvCategoryId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvertisementDetails_tbl">
+      <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.AdvertisementDetails_tbl">
+        <MappingFragment StoreEntitySet="AdvertisementDetails_tbl">
+          <ScalarProperty Name="AdvId" ColumnName="AdvId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="AdvCategoryId" ColumnName="AdvCategoryId" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsRejected" ColumnName="IsRejected" />
+          <ScalarProperty Name="MediaPath" ColumnName="MediaPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails_tbl">
+      <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.EmployeeDetails_tbl">
+        <MappingFragment StoreEntitySet="EmployeeDetails_tbl">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole_tbl">
+      <EntityTypeMapping TypeName="Employee_Advertisement_PortalModel.UserRole_tbl">
+        <MappingFragment StoreEntitySet="UserRole_tbl">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_EmployeeDetail" FunctionName="Employee_Advertisement_PortalModel.Store.SP_EmployeeDetail" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateAdvDetail" FunctionName="Employee_Advertisement_PortalModel.Store.SP_UpdateAdvDetail" />
+  </EntityContainerMapping>
+</Mapping>

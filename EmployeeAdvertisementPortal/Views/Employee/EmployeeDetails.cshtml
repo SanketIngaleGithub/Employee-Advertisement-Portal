@@ -1,0 +1,65 @@
+﻿@model EmployeeAdvertisementPortal.EmployeeViewModel
+
+@{
+    ViewBag.Title = "EmployeeDetails";
+    IEnumerable<SelectListItem> roleList = ViewBag?.RoleID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    roleList = new List<SelectListItem>
+{
+        new SelectListItem { Value = "1", Text = "Admin" },
+        new SelectListItem { Value = "2", Text = "Employee" },
+    };
+}
+<link href="~/Content/Style/EmployeeDetails.css" rel="stylesheet" />
+<br />
+<br />
+<br />
+<div class="form-horizontal container-box mx-auto">
+    <div class="card shadow-lg">
+        <div class="card-header bg-dark text-white">
+            Employee Information
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="inputFirstName">First Name</label>
+                            <input class="form-control" id="inputFirstName" type="text" value="@Model.FirstName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputLastName">Last Name</label>
+                            <input class="form-control" id="inputLastName" type="text" value="@Model.LastName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputEmail">Email</label>
+                            <input class="form-control" id="inputEmail" type="email" value="@Model.Email" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="inputGender">Gender</label>
+                            <input class="form-control" id="inputGender" type="text" value="@Model.Gender" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputDOB">Date of Birth</label>
+                            <input class="form-control" id="inputDOB" type="text" value="@((Model.DOB.HasValue) ? Model.DOB.Value.ToShortDateString() : string.Empty)" readonly> </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputAddress">Address</label>
+                            <input class="form-control" id="inputAddress" type="text" value="@Model.Address" readonly>
+                        </div>
+                       
+                    </div>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

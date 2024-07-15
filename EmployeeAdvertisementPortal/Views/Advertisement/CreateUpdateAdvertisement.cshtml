@@ -1,0 +1,213 @@
+﻿@model EmployeeAdvertisementPortal.Model.AdvertisementViewModel.AdvertisementViewModel
+
+@{
+    ViewBag.Title = (Model.AdvId > 0) ? "Update Advertisement" : "Create Advertisement";
+    string actionName = (Model.AdvId > 0) ? "UpdateAdvertisement" : "CreateAdvertisement";
+    var categoryId = ViewBag.AdvCategoryId;
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="~/Content/Style/CreateUpdateAdvertisement.css" rel="stylesheet" />
+<style>
+    .image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .custom-file-input {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .custom-file-input input[type="file"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            height: 100%; 
+        }
+
+    .custom-file-label {
+        position: relative;
+        display: block;
+        padding: .75rem .75rem; 
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        font-weight: 400;
+        height: calc(2.25rem + 2px); 
+    }
+
+        .custom-file-label::after {
+            content: "Choose file";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            display: block;
+            height: 100%;
+            padding: .75rem .75rem; 
+            line-height: 1.5;
+            color: #495057;
+            background-color: #e9ecef;
+            border-left: inherit;
+            border-radius: 0 .25rem .25rem 0;
+            pointer-events: none;
+        }
+
+    .custom-file-input input[type="file"]:focus ~ .custom-file-label {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .custom-file-input input[type="file"] {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        cursor: pointer;
+    }
+</style>
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<body style="background-color:azure">
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2 class="text-center" style="color: black; font-weight: bold;">@ViewBag.Title</h2>
+    <body>
+        @using (Html.BeginForm(actionName, "Advertisement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="container-box mx-auto">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger text-center" })
+
+                @if (Model.AdvId > 0)
+                {
+                    @Html.HiddenFor(model => model.AdvId)
+                }
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Title" class="control-label">Title <span class="required-field">*</span></label>
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+
+                    <div class="form-group">
+                    <label for="Description" class="control-label">Description<span class="required-field">*</span></label>
+                        <textarea id="Description" name="Description" class="form-control" style="width: 100%;" rows="3">@Model.Description</textarea>
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+
+                        <div class="form-group">
+                            <label for="Price" class="control-label">Price<span class="required-field">*</span></label>
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Location" class="control-label">Location<span class="required-field">*</span></label>
+                            @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="AdvCategoryId" class="control-label">Category<span class="required-field">*</span></label>
+                            <div>
+                                @Html.DropDownListFor(model => model.AdvCategoryId, Model.Category, "-- Select Category --", new { @class = "form-control", @required = "required" })
+                                @Html.ValidationMessageFor(model => model.AdvCategoryId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MediaPath" class="control-label">Image<span class="required-field">*</span></label>
+                            @if (Model.AdvId > 0)
+                            {
+                                <img src="@(string.IsNullOrEmpty(Model.MediaPath) ? Url.Content("~/Content/Images/DefaultNoImage.jpg") : Model.MediaPath)" class="image" />
+                                @Html.Hidden("ExistingImageName", System.IO.Path.GetFileName(Model.MediaPath))
+                            }
+                            @Html.HiddenFor(x => x.MediaPath)
+
+                            &nbsp;
+                            <div class="custom-file-input">
+                                <input type="file" name="AdvertisementFile" id="AdvertisementFile" @(Model.AdvId == 0 ? "required" : "") />
+                                <label for="AdvertisementFile" class="custom-file-label"></label>
+                                <small class="form-text text-muted">Accepted file types: JPG, JPEG, PNG, JFIF</small>
+                                @Html.ValidationMessageFor(model => model.AdvertisementFile, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="form-group text-center">
+                    @Html.ActionLink("Back to List", "AdvertisementList", null, new { @class = "btn btn-dark" })
+
+                    &nbsp;&nbsp;  <input type="submit" value="Save" class="btn mr-2" style="background-color: #FFC300 " />
+                </div>
+            </div>
+        }
+    </body>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            $(function () {
+               
+                var existingImageName = '@Html.Raw(Model.AdvId > 0 ? System.IO.Path.GetFileName(Model.MediaPath) : "")';
+                if (existingImageName) {
+                    var extension = existingImageName.split('.').pop();
+                    var nameWithoutExtension = existingImageName.replace('.' + extension, '');
+                    $('#AdvertisementFile').next('.custom-file-label').html(nameWithoutExtension + '/' + extension);
+                }
+
+                $("form").submit(function (event) {
+                    var fileInput = $("#AdvertisementFile")[0];
+                    var file = fileInput.files[0];
+                    var fileType = file ? file.type : '';
+                    var validImageTypes = ["image/jpeg", "image/png", "image/jfif"];
+
+                    if (file && validImageTypes.indexOf(fileType) < 0) {
+                        event.preventDefault();
+                        Swal.fire({
+                            title: "Invalid File Type",
+                            text: "Please upload a JPG or PNG file.",
+                            icon: "error"
+                        });
+                        return false;
+                    }
+                });
+
+               
+                $('#AdvertisementFile').on('change', function () {
+                    var fileName = $(this).val().split('\\').pop();
+                    var extension = fileName.split('.').pop();
+                    var nameWithoutExtension = fileName.replace('.' + extension, '');
+                    $(this).next('.custom-file-label').addClass("selected").html(nameWithoutExtension + '/' + extension);
+                });
+            });
+        </script>
+    }
+
+    <style>
+        .required-field {
+            color: red;
+        }
+    </style>

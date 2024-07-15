@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_Advertisement_PortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdvertInterestMapper_tbl">
+    <Key>
+      <PropertyRef Name="InterestID" />
+    </Key>
+    <Property Name="InterestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="AdvId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdvertisementCategory_tbl">
+    <Key>
+      <PropertyRef Name="AdvCategoryId" />
+    </Key>
+    <Property Name="AdvCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdvertisementDetails_tbl">
+    <Key>
+      <PropertyRef Name="AdvId" />
+    </Key>
+    <Property Name="AdvId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="PostedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="date" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdvCategoryId" Type="int" Nullable="false" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsRejected" Type="bit" Nullable="false" />
+    <Property Name="MediaPath" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeDetails_tbl">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="date" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UserRole_tbl">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AdvertInt__AdvId__01142BA1">
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="AdvId" />
+      </Principal>
+      <Dependent Role="AdvertInterestMapper_tbl">
+        <PropertyRef Name="AdvId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AdvertInt__EmpId__02084FDA">
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertInterestMapper_tbl" Type="Self.AdvertInterestMapper_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="AdvertInterestMapper_tbl">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+    <End Role="AdvertisementCategory_tbl" Type="Self.AdvertisementCategory_tbl" Multiplicity="1" />
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvertisementCategory_tbl">
+        <PropertyRef Name="AdvCategoryId" />
+      </Principal>
+      <Dependent Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="AdvCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="1" />
+    <End Role="AdvertisementDetails_tbl" Type="Self.AdvertisementDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="AdvertisementDetails_tbl">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDetails_tbl_UserRole_tbl">
+    <End Role="UserRole_tbl" Type="Self.UserRole_tbl" Multiplicity="1" />
+    <End Role="EmployeeDetails_tbl" Type="Self.EmployeeDetails_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole_tbl">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="EmployeeDetails_tbl">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_EmployeeDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="date" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+    <Parameter Name="ModifiedDate" Type="date" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_UpdateAdvDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdvId" Type="int" Mode="In" />
+    <Parameter Name="EmpId" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="int" Mode="In" />
+    <Parameter Name="PostedDate" Type="date" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="date" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+    <Parameter Name="ModifiedDate" Type="date" Mode="In" />
+    <Parameter Name="Location" Type="varchar" Mode="In" />
+    <Parameter Name="AdvCategoryId" Type="int" Mode="In" />
+    <Parameter Name="IsApproved" Type="bit" Mode="In" />
+    <Parameter Name="IsRejected" Type="bit" Mode="In" />
+    <Parameter Name="MediaPath" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="Employee_Advertisement_PortalModelStoreContainer">
+    <EntitySet Name="AdvertInterestMapper_tbl" EntityType="Self.AdvertInterestMapper_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdvertisementCategory_tbl" EntityType="Self.AdvertisementCategory_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdvertisementDetails_tbl" EntityType="Self.AdvertisementDetails_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeDetails_tbl" EntityType="Self.EmployeeDetails_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole_tbl" EntityType="Self.UserRole_tbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AdvertInt__AdvId__01142BA1" Association="Self.FK__AdvertInt__AdvId__01142BA1">
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+      <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AdvertInt__EmpId__02084FDA" Association="Self.FK__AdvertInt__EmpId__02084FDA">
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+      <End Role="AdvertInterestMapper_tbl" EntitySet="AdvertInterestMapper_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl" Association="Self.FK_AdvertisementDetails_tbl_AdvertisementCategory_tbl">
+      <End Role="AdvertisementCategory_tbl" EntitySet="AdvertisementCategory_tbl" />
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdvertisementDetails_tbl_EmployeeDetails_tbl" Association="Self.FK_AdvertisementDetails_tbl_EmployeeDetails_tbl">
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+      <End Role="AdvertisementDetails_tbl" EntitySet="AdvertisementDetails_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDetails_tbl_UserRole_tbl" Association="Self.FK_EmployeeDetails_tbl_UserRole_tbl">
+      <End Role="UserRole_tbl" EntitySet="UserRole_tbl" />
+      <End Role="EmployeeDetails_tbl" EntitySet="EmployeeDetails_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,121 @@
+﻿@model EmployeeAdvertisementPortal.Model.AdvertisementViewModel.AdvertisementViewModel
+
+@{
+    ViewBag.Title = "AdvertisementDetails";
+    IEnumerable<SelectListItem> categoryList = ViewBag?.AdvCategoryID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    categoryList = new List<SelectListItem>
+{
+        new SelectListItem { Value = "2", Text = "Sell" },
+        new SelectListItem { Value = "3", Text = "Rent" }
+    };
+}
+
+<link href="~/Content/Style/AdvertisementDetails.css" rel="stylesheet" />
+<style>
+  
+.no-hover {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .modal {
+     
+        top: 32%;
+        left: 63%;
+        width: 25%;
+        height: 48%;
+        scroll-behavior;
+    }
+
+   
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="form-horizontal container-box mx-auto">
+    <div class="card shadow-lg">
+        <div class="card-header bg-dark text-white">
+            Advertisement Information
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label" for="inputImage"></label>
+                            @if (!string.IsNullOrEmpty(Model.MediaPath))
+                            {
+                                <div class="text-center">
+                                    <img src="@Url.Content(Model.MediaPath)" alt="Advertisement Image" style="max-width: 300px; max-height: 400px;" />
+                                </div>
+                            }
+                            else
+                            {
+                                <p>No image available</p>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6 labels" >
+                        <div class="form-group no-hover">
+                            <label class="control-label" for="inputTitle">Title</label>
+                            <input class="form-control" id="inputTitle" type="text" value="@Model.Title" readonly>
+                        </div>
+                        <div class="form-group no-hover">
+                            <label class="control-label" for="inputDescription">Description</label>
+                            <input class="form-control" id="inputDescription" type="text" value="@Model.Description" readonly>
+                        </div>
+                        <div class="form-group no-hover">
+                            <label class="control-label" for="inputPrice">Price</label>
+                            <input class="form-control" id="inputPrice" type="text" value="@Model.Price" readonly>
+                        </div>
+                        <div class="form-group no-hover">
+                            <label class="control-label" for="inputCategory">Category</label>
+                            @Html.DropDownListFor(model => model.AdvCategoryId, categoryList, new { @class = "form-control" })    @*disabled = "disabled"*@
+                        </div>
+                        <br />
+
+                        <div class="form-group">
+                            @Html.ActionLink("Back to List", "AdvertisementList", null, new { @class = "btn btn-dark" })
+                            &nbsp;&nbsp;
+                            <a href="#" id="interestedPeopleLink" class="btn mr-2" style="background-color: #FFC300; color: #FFFFFF">Interested People</a>
+                        </div>
+
+                        <div id="interestedPeopleModal" class="modal" style="display: none;">
+                            <div class="modal-content" style="border: none;">
+                                <span style="cursor:pointer" class="close text-end">&times;</span>
+                                <div id="modalContent"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+    $("#interestedPeopleLink").click(function(e) {
+        e.preventDefault();
+
+        $("#interestedPeopleModal").show();
+
+        $.get("@Url.Action("GetInterestedEmails", "Advertisement", new { id = Model.AdvId })", function(data) {
+            $("#modalContent").html(data);
+        });
+    });
+
+    $(".close").click(function() {
+        $("#interestedPeopleModal").hide();
+    });
+});
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

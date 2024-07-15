@@ -1,0 +1,185 @@
+﻿@model IEnumerable<EmployeeAdvertisementPortal.Model.AdvertisementViewModel.AdvertisementViewModel>
+@using EmployeeAdvertisementPortal.Core.Constant;
+@{
+    ViewBag.Title = "ApprovalList";
+    IEnumerable<SelectListItem> CategoryList = ViewBag?.AdvCategoryId;
+    string EmailId = Session["Email"] as string;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+    .action-icon {
+        cursor: pointer;
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<body class="bg">
+
+    <h2>@ConstantFile.advertisemntApproval</h2>
+    <br />
+    <br />
+    <div class="list">
+        <table class="table table-hover table-striped table-bordered text-center" id="tblCustomer" style="width:100%">
+            <thead style="white-space: nowrap;">
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <th class="text-center">CreatedBy</th>
+                    <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.Location)</th>
+                    <th>@Html.DisplayNameFor(model => model.AdvCategoryId)</th>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>@item.CreatedByEmail</td>
+                        <td>@item.CreatedDate.ToString("yyyy-MM-dd")</td>
+                        <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                        <td>
+                            @{
+                                string categoryName = CategoryList.Where(x => x.Value == item.AdvCategoryId.ToString()).First().Text;
+                            }
+                            @categoryName
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.MediaPath))
+                            {
+                                <img src="@Url.Content(item.MediaPath)" alt="Image" style="max-width: 200px; max-height: 200px;" />
+                            }
+                            else
+                            {
+                                <p>No image available</p>
+                            }
+                        </td>
+                        <td>
+                            <div class="action-buttons" style="white-space: nowrap;">
+                                <input type="radio" name="approvalStatus_@item.AdvId" value="approve" onchange="submitForm('@Url.Action("Approve", "Admin", new { id = item.AdvId })')" @(item.IsApproved ? "checked" : "")>&nbsp;<i class="fas fa-check text-success action-icon"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="approvalStatus_@item.AdvId" value="reject" onchange="rejectAction('@Url.Action("Reject", "Admin", new { id = item.AdvId })', 'approvalStatus_@item.AdvId')" @(item.IsRejected ? "checked" : "")>&nbsp;<i class="fas fa-times text-danger action-icon"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                <i class="fas fa-trash delete-btn action-icon" onclick="deleteAdvertisement('@Url.Action("DeleteAdvertise", "Admin", new { id = item.AdvId })')" data-id="@item.AdvId" title="Delete"></i>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: true
+    });
+
+    function rejectAction(actionUrl, radioButtonName) {
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You are about to reject this advertisement.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, reject it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                submitForm(actionUrl, radioButtonName, "reject");
+            }
+            else {
+                $("input[name='" + radioButtonName + "'][value='approve']").prop("checked", true);
+                $("input[name='" + radioButtonName + "'][value='reject']").prop("checked", false);
+                swalWithBootstrapButtons.fire({
+                    title: "Rejected",
+                    text: "Advertisement is not rejected.",
+                    icon: "error"
+                });
+            }
+        });
+    }
+
+    function submitForm(actionUrl, radioButtonName, value) {
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            success: function (response) {
+                if (response.success) {
+                    console.log("Action successful.");
+                    if (value === "approve") {
+                        $("input[name='" + radioButtonName + "'][value='approve']").prop("checked", true);
+                        $("input[name='" + radioButtonName + "'][value='reject']").prop("checked", false);
+                    } else if (value === "reject") {
+                        $("input[name='" + radioButtonName + "'][value='approve']").prop("checked", false);
+                        $("input[name='" + radioButtonName + "'][value='reject']").prop("checked", true);
+                    }
+                } else {
+                    console.error("Action failed: " + response.message);
+                    alert("Action failed: " + response.message);
+                    $("input[name='" + radioButtonName + "'][value='approve']").prop("checked", false);
+                    $("input[name='" + radioButtonName + "'][value='reject']").prop("checked", true);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error occurred while processing action: " + error);
+                alert("Error occurred while processing action. Please try again later.");
+                $("input[name='" + radioButtonName + "'][value='approve']").prop("checked", false);
+                $("input[name='" + radioButtonName + "'][value='reject']").prop("checked", true);
+            }
+        });
+    }
+
+    function deleteAdvertisement(actionUrl) {
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = actionUrl;
+                swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Your advertisement has been deleted.",
+                    icon: "success"
+                })
+                    .then(() => {
+                            window.location.href = '@Url.Action("ApprovalList", "Admin")';
+                        });
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your advertisement is safe :)",
+                    icon: "error"
+                });
+            }
+        });
+    }
+</script>
+
+<script>
+
+    var table = new DataTable('#tblCustomer', {
+        columnDefs: [
+            { targets: [7], orderable: false },
+            { targets: [8], orderable: false }
+
+        ]
+    });
+</script>

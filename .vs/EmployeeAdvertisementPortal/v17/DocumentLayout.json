@@ -1,0 +1,635 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|d:\\miniproject\\mini-projects\\(eap) employee advertisements portal\\employeeadvertisementportal\\controllers\\advertisement\\advertisementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:employeeadvertisementportal\\controllers\\advertisement\\advertisementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal\\views\\advertisement\\createupdateadvertisement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:employeeadvertisementportal\\views\\advertisement\\createupdateadvertisement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.model\\advertisementviewmodel\\advertisementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|solutionrelative:employeeadvertisementportal.model\\advertisementviewmodel\\advertisementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.core\\helperutility\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|solutionrelative:employeeadvertisementportal.core\\helperutility\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.bal\\agent\\advertisementagent\\advertisementagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|solutionrelative:employeeadvertisementportal.bal\\agent\\advertisementagent\\advertisementagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.bal\\agent\\adminagent\\adminagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|solutionrelative:employeeadvertisementportal.bal\\agent\\adminagent\\adminagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A377EB59-90AC-4287-96F1-7570EC7EE15A}|ApiEmployeeAdvertisementPortal\\ApiEmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\apiemployeeadvertisementportal\\controllers\\apiemployeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A377EB59-90AC-4287-96F1-7570EC7EE15A}|ApiEmployeeAdvertisementPortal\\ApiEmployeeAdvertisementPortal.csproj|solutionrelative:apiemployeeadvertisementportal\\controllers\\apiemployeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.dal\\iservice\\iadvertisementservice\\iadvertisementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|solutionrelative:employeeadvertisementportal.dal\\iservice\\iadvertisementservice\\iadvertisementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.bal\\iagent\\iadvertisementagent\\iadvertisementagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|solutionrelative:employeeadvertisementportal.bal\\iagent\\iadvertisementagent\\iadvertisementagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.dal\\service\\adminservice\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|solutionrelative:employeeadvertisementportal.dal\\service\\adminservice\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.dal\\service\\advertisementservice\\advertisementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|solutionrelative:employeeadvertisementportal.dal\\service\\advertisementservice\\advertisementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.dal\\service\\loginservice\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|solutionrelative:employeeadvertisementportal.dal\\service\\loginservice\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.bal\\agent\\employeeagent\\employeeagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|solutionrelative:employeeadvertisementportal.bal\\agent\\employeeagent\\employeeagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.model\\employeeviewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|solutionrelative:employeeadvertisementportal.model\\employeeviewmodel\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.dal\\data\\advertinterestmapper_tbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EDD145C-D361-4E47-8B29-8E7E748DB49A}|EmployeeAdvertisementPortal.DAL\\EmployeeAdvertisementPortal.DAL.csproj|solutionrelative:employeeadvertisementportal.dal\\data\\advertinterestmapper_tbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8238DDF-2F63-404D-A9CD-BFFB0462A535}|WebApiModel\\WebApiModel.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\webapimodel\\apiadvertisementdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8238DDF-2F63-404D-A9CD-BFFB0462A535}|WebApiModel\\WebApiModel.csproj|solutionrelative:webapimodel\\apiadvertisementdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A377EB59-90AC-4287-96F1-7570EC7EE15A}|ApiEmployeeAdvertisementPortal\\ApiEmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\apiemployeeadvertisementportal\\app_start\\unityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A377EB59-90AC-4287-96F1-7570EC7EE15A}|ApiEmployeeAdvertisementPortal\\ApiEmployeeAdvertisementPortal.csproj|solutionrelative:apiemployeeadvertisementportal\\app_start\\unityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.core\\utility\\mailutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|solutionrelative:employeeadvertisementportal.core\\utility\\mailutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8238DDF-2F63-404D-A9CD-BFFB0462A535}|WebApiModel\\WebApiModel.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\webapimodel\\employeedetailapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8238DDF-2F63-404D-A9CD-BFFB0462A535}|WebApiModel\\WebApiModel.csproj|solutionrelative:webapimodel\\employeedetailapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.bal\\agent\\loginagent\\loginagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F14A390-8F33-4E49-A842-6BE2DCFF564A}|EmployeeAdvertisementPortal.BAL\\EmployeeAdvertisementPortal.BAL.csproj|solutionrelative:employeeadvertisementportal.bal\\agent\\loginagent\\loginagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.core\\constant\\constantfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18B9AD75-5132-4D3D-A8D7-12041537FFCF}|EmployeeAdvertisementPortal.Core\\EmployeeAdvertisementPortal.Core.csproj|solutionrelative:employeeadvertisementportal.core\\constant\\constantfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\employeeadvertisementportal.model\\interestedviewmodel\\interestedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B6100BF-3B87-4EBD-AAC1-44FC767CF8E8}|EmployeeAdvertisementPortal.Model\\EmployeeAdvertisementPortal.Model.csproj|solutionrelative:employeeadvertisementportal.model\\interestedviewmodel\\interestedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFCB5C6E-18E4-49FF-9C78-2F78D1A4925E}|EmployeeAdvertisementPortal\\EmployeeAdvertisementPortal.csproj|solutionrelative:EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 343,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdvertisementController.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Advertisement\\AdvertisementController.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Controllers\\Advertisement\\AdvertisementController.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Advertisement\\AdvertisementController.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Controllers\\Advertisement\\AdvertisementController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAK0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T07:21:14.381Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateUpdateAdvertisement.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\CreateUpdateAdvertisement.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Advertisement\\CreateUpdateAdvertisement.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\CreateUpdateAdvertisement.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Advertisement\\CreateUpdateAdvertisement.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-06T09:31:19.173Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ApprovedAdvertisementList.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Advertisement\\ApprovedAdvertisementList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T11:09:34.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AdvertisementDetails.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementDetails.cshtml",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAYwFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T10:01:22.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T12:59:33.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CreateUpdateEmployee.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Employee\\CreateUpdateEmployee.cshtml",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAAAGkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T07:10:10.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Controllers\\Login\\LoginController.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAADwv5UAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:21:11.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AdvertisementList.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Advertisement\\AdvertisementList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T05:15:59.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "GetInterestedEmails.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Advertisement\\GetInterestedEmails.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T10:02:20.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Controllers\\Employee\\EmployeeController.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAAALMAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T13:05:52.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UnityConfig.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACgAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T12:24:02.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Login\\ForgotPassword.cshtml",
+              "ViewState": "AQIAABYAAAAAAAAAAAAmwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T05:53:07.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Employee\\Index.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFMAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T11:53:54.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DeleteEmployee.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Employee\\DeleteEmployee.cshtml",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T13:09:00.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "EmployeeDetails.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Employee\\EmployeeDetails.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T11:52:48.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "VerifyOTP.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Login\\VerifyOTP.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T10:23:39.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T05:46:01.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ApprovalList.cshtml",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml",
+              "RelativeToolTip": "EmployeeAdvertisementPortal\\Views\\Admin\\ApprovalList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T05:22:32.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileHelper.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\HelperUtility\\FileHelper.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Core\\HelperUtility\\FileHelper.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\HelperUtility\\FileHelper.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Core\\HelperUtility\\FileHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T13:22:50.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdvertisementViewModel.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\AdvertisementViewModel\\AdvertisementViewModel.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Model\\AdvertisementViewModel\\AdvertisementViewModel.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\AdvertisementViewModel\\AdvertisementViewModel.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Model\\AdvertisementViewModel\\AdvertisementViewModel.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAUwD8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T07:01:27.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdvertisementAgent.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\AdvertisementAgent\\AdvertisementAgent.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.BAL\\Agent\\AdvertisementAgent\\AdvertisementAgent.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\AdvertisementAgent\\AdvertisementAgent.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.BAL\\Agent\\AdvertisementAgent\\AdvertisementAgent.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAwwFAAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T13:19:02.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminAgent.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\AdminAgent\\AdminAgent.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.BAL\\Agent\\AdminAgent\\AdminAgent.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\AdminAgent\\AdminAgent.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.BAL\\Agent\\AdminAgent\\AdminAgent.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAmwCcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T13:10:59.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "APIEmployeeController.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\ApiEmployeeAdvertisementPortal\\Controllers\\APIEmployeeController.cs",
+              "RelativeDocumentMoniker": "ApiEmployeeAdvertisementPortal\\Controllers\\APIEmployeeController.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\ApiEmployeeAdvertisementPortal\\Controllers\\APIEmployeeController.cs",
+              "RelativeToolTip": "ApiEmployeeAdvertisementPortal\\Controllers\\APIEmployeeController.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAADwv5sAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T13:33:13.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAdvertisementService.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\IService\\IAdvertisementService\\IAdvertisementService.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.DAL\\IService\\IAdvertisementService\\IAdvertisementService.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\IService\\IAdvertisementService\\IAdvertisementService.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.DAL\\IService\\IAdvertisementService\\IAdvertisementService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T08:52:01.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAdvertisementAgent.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\IAgent\\IAdvertisementAgent\\IAdvertisementAgent.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.BAL\\IAgent\\IAdvertisementAgent\\IAdvertisementAgent.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\IAgent\\IAdvertisementAgent\\IAdvertisementAgent.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.BAL\\IAgent\\IAdvertisementAgent\\IAdvertisementAgent.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAswEcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T06:03:18.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdvertisementService.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\AdvertisementService\\AdvertisementService.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.DAL\\Service\\AdvertisementService\\AdvertisementService.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\AdvertisementService\\AdvertisementService.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.DAL\\Service\\AdvertisementService\\AdvertisementService.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAYwCAAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T08:35:43.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\AdminService\\AdminService.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.DAL\\Service\\AdminService\\AdminService.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\AdminService\\AdminService.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.DAL\\Service\\AdminService\\AdminService.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAYwCwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:04:35.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\LoginService\\LoginService.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.DAL\\Service\\LoginService\\LoginService.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Service\\LoginService\\LoginService.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.DAL\\Service\\LoginService\\LoginService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAB8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:23:10.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "InterestedViewModel.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\InterestedViewModel\\InterestedViewModel.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Model\\InterestedViewModel\\InterestedViewModel.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\InterestedViewModel\\InterestedViewModel.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Model\\InterestedViewModel\\InterestedViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:59:21.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmployeeAgent.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\EmployeeAgent\\EmployeeAgent.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.BAL\\Agent\\EmployeeAgent\\EmployeeAgent.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\EmployeeAgent\\EmployeeAgent.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.BAL\\Agent\\EmployeeAgent\\EmployeeAgent.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAArwGcAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T09:43:35.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmployeeViewModel.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\EmployeeViewModel\\EmployeeViewModel.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Model\\EmployeeViewModel\\EmployeeViewModel.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Model\\EmployeeViewModel\\EmployeeViewModel.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Model\\EmployeeViewModel\\EmployeeViewModel.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T06:21:26.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdvertInterestMapper_tbl.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Data\\AdvertInterestMapper_tbl.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.DAL\\Data\\AdvertInterestMapper_tbl.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.DAL\\Data\\AdvertInterestMapper_tbl.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.DAL\\Data\\AdvertInterestMapper_tbl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T05:43:05.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "APIAdvertisementDetails.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\WebApiModel\\APIAdvertisementDetails.cs",
+              "RelativeDocumentMoniker": "WebApiModel\\APIAdvertisementDetails.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\WebApiModel\\APIAdvertisementDetails.cs",
+              "RelativeToolTip": "WebApiModel\\APIAdvertisementDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:46:41.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UnityConfig.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\ApiEmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "RelativeDocumentMoniker": "ApiEmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\ApiEmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "RelativeToolTip": "ApiEmployeeAdvertisementPortal\\App_Start\\UnityConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T05:43:56.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MailUtility.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\Utility\\MailUtility.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Core\\Utility\\MailUtility.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\Utility\\MailUtility.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Core\\Utility\\MailUtility.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAmwBcAAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T06:05:30.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmployeeDetailAPIModel.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\WebApiModel\\EmployeeDetailAPIModel.cs",
+              "RelativeDocumentMoniker": "WebApiModel\\EmployeeDetailAPIModel.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\WebApiModel\\EmployeeDetailAPIModel.cs",
+              "RelativeToolTip": "WebApiModel\\EmployeeDetailAPIModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T06:43:01.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginAgent.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\LoginAgent\\LoginAgent.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.BAL\\Agent\\LoginAgent\\LoginAgent.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.BAL\\Agent\\LoginAgent\\LoginAgent.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.BAL\\Agent\\LoginAgent\\LoginAgent.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowCYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:22:37.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ConstantFile.cs",
+              "DocumentMoniker": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\Constant\\ConstantFile.cs",
+              "RelativeDocumentMoniker": "EmployeeAdvertisementPortal.Core\\Constant\\ConstantFile.cs",
+              "ToolTip": "D:\\MiniProject\\Mini-Projects\\(EAP) Employee Advertisements Portal\\EmployeeAdvertisementPortal.Core\\Constant\\ConstantFile.cs",
+              "RelativeToolTip": "EmployeeAdvertisementPortal.Core\\Constant\\ConstantFile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T06:07:01.57Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

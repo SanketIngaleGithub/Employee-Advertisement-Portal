@@ -1,0 +1,149 @@
+﻿@model IEnumerable<EmployeeAdvertisementPortal.Model.AdvertisementViewModel.AdvertisementViewModel>
+
+@{
+    ViewData["Title"] = "Advertisements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    IEnumerable<SelectListItem> CategoryList = ViewBag?.AdvCategoryId;
+    string EmailId = Session["Email"] as string;
+}
+<body>
+    <div class="container">
+        <div class="input-group mb-3" style="background-color: white; padding: 10px; margin-top:90px;">
+            <input type="text" id="locationInput" class="form-control mr-1" placeholder="Enter location...">
+            <select id="categoryFilter" class="form-control mr-1">
+                <option value="">Select Category</option>
+                <option value="Sell">Sell</option>
+                <option value="Rent">Rent</option>
+            </select>
+            <div class="input-group-append">
+                &nbsp;<button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fas fa-search"></i> Search </button>
+            </div>
+        </div>
+        <div id="cardContainer" style="margin-top: 30px;">
+            @foreach (var item in Model.Take(5))
+            {
+                <div class="card mb-3">
+                    <div class="card-header ">
+                        <h5 class="card-title text-black">@item.Title</h5>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            @if (!string.IsNullOrEmpty(item.MediaPath))
+                            {
+                                <img src="@Url.Content(item.MediaPath)" class="card-img" style="width:100%; border-radius:0%; height:100%;" alt="@item.Title">
+                            }
+                            else
+                            {
+                                <img src="~/Content/Advertisement/car.jpg" class="card-img" style="width:100%; border-radius:0%; height:100%;" alt="Default Image">
+                            }
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text"><strong>Description:</strong> @item.Description</p>
+                                <p class="card-text"><strong>Location:</strong> @item.Location</p>
+                                @{
+                                    string categoryName = CategoryList.FirstOrDefault(x => x.Value == item.AdvCategoryId.ToString())?.Text;
+                                }
+                                <p class="card-text"><strong>Category:</strong> @categoryName</p>
+
+                                <p class="card-text"><strong>Price:</strong> @item.Price</p>
+                                <p class="card-text"><small class="text-muted"><strong>Created By:</strong> @item.CreatedByEmail | <strong>Posted Date:</strong> @item.PostedDate.ToString("yyyy/MM/dd")</small></p>
+                                <div class="form-group">
+                                    <label><strong>Status:</strong></label>
+                                    <div>
+                                        <label class="mr-2">
+                                            <input type="checkbox" name="status_@item.AdvId" class="status-checkbox" @(item.Interested ? "checked" : "")> Interested
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="pagination" class="d-flex justify-content-end"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .action-icon {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+    $(document).ready(function () {
+    var pageNumber = 1;
+    var pageSize = 5;
+    var isLoading = false;
+
+    function loadMoreData() {
+        if (isLoading) return;
+        isLoading = true;
+
+        $.ajax({
+            url: '@Url.Action("ApprovedAdvertisementList", "Advertisement")',
+            type: 'GET',
+            data: { pageNumber: pageNumber, pageSize: pageSize },
+            success: function (data) {
+                $('#cardContainer').append($(data).find('#cardContainer').html());
+                pageNumber++;
+                isLoading = false;
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+                isLoading = false;
+            }
+        });
+    }
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+            loadMoreData();
+        }
+    });
+});
+
+        $(document).ready(function () {
+            $('#searchBtn').on('click', function () {
+                var locationText = $('#locationInput').val().toLowerCase();
+                var category = $('#categoryFilter').val().toLowerCase();
+                $('#cardContainer .card').each(function () {
+                    var cardLocation = $(this).find('.card-text:contains("Location:")').text().toLowerCase();
+                    var cardCategory = $(this).find('.card-text:contains("Category:")').text().toLowerCase();
+                    cardCategory = cardCategory.split("category: ")[1].trim();
+
+                    var locationMatch = cardLocation.includes(locationText) || locationText === '';
+                    var categoryMatch = category === '' || cardCategory === category;
+
+                    if (locationMatch && categoryMatch) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            $('.status-checkbox').on('change', function () {
+                var advId = $(this).attr('name').split('_')[1];
+                var isInterested = $(this).is(':checked');
+                $.ajax({
+                    url: '/Advertisement/SaveInterest',
+                    type: 'POST',
+                    data: {
+                        AdvId: advId,
+                        isInterested: isInterested
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
